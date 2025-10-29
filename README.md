@@ -85,11 +85,17 @@ A fixed, auto-dismissing notification designed for seamless user feedback.
 #### Usage Example
 
 ```jsx
-import { Toast } from 'library-name'; 
+import { Toast, showSuccessToast } from 'library-name'; 
 
-// This component must be rendered once, likely at the application root.
-// Individual toasts are triggered via the provided functions.
+// 1. RENDER THE MANAGER ONCE (at the app root)
+// This must be rendered to receive the notifications.
+// <Toast /> 
 
+// 2. TRIGGER A TOAST ANYWHERE ELSE:
+const handleSave = () => {
+    // Logic to save data...
+    showSuccessToast("Profile updated successfully!");
+};
 ```
 
 ### 3\. Sidebar Menu (`SidebarMenu/`)
@@ -123,3 +129,11 @@ const [isOpen, setIsOpen] = useState(false);
 
 ## Screenshots
 
+### 1. Storybook Overview & Component States
+
+| Section | State 1 | State 2 |
+| :--- | :--- | :--- |
+| **Storybook UI** | ![Storybook Overview](assets/storybook-structure.png) | *(N/A)* |
+| **Input Component** | **Password Hidden** <br> ![Password Hidden](assets/input-password-hidden.png) | **Password Revealed** <br> ![Password Revealed](assets/input-password-revealed.png) |
+| **Sidebar Menu** | **Menu Closed** <br> ![Sidebar Closed](assets/sidebar-closed.png) | **Menu Open** <br> ![Sidebar Open](assets/sidebar-open-nested.png) |
+| **Toast Notification** | **Test Bench UI** <br> ![Toast Test Bench](assets/toast-test-bench-ui.png) | **Stacked Toasts** <br> ![Stacked Toasts](assets/toast-stacked.png) |
