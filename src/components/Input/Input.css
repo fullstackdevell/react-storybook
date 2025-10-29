@@ -1,0 +1,64 @@
+.input-field {
+    display: flex; 
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.input-control-wrapper {
+    position: relative; 
+    display: flex; 
+    align-items: center; 
+}
+
+.input-field-element {
+    width: 100%;
+    padding: 10px 10px; 
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    padding-right: 10px; 
+}
+
+.input-field-element.has-toggle-control { 
+    padding-right: 40px; 
+}
+
+.input-field-element.has-clear-control {
+    padding-right: 60px; 
+}
+
+
+.toggle-button,
+.clear-button {
+    position: absolute; 
+    top: 50%;
+    transform: translateY(-50%); 
+    height: 30px;
+    width: 30px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    z-index: 2; 
+}
+
+.toggle-button {
+    right: 5px; 
+}
+
+.clear-button {
+    right: 35px; 
+    font-size: 16px;
+    color: #999;
+    transition: color 0.15s ease;
+}
+
+.input-field-element:not(.has-toggle-control) ~ .clear-button {
+    right: 5px;
+}
+
+.clear-button:hover {
+    color: #333; 
+}
